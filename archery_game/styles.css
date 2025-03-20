@@ -1,0 +1,223 @@
+/* Enhanced styles for the Advanced Archery Game */
+
+/* Game canvas styling */
+#gameCanvas {
+    background: linear-gradient(to bottom, #1a2a3a 0%, #2c5364 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 80px rgba(0, 0, 0, 0.2);
+    cursor: crosshair;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Game container */
+.game-container {
+    padding: 20px;
+    background-color: #0f1724;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Game header */
+h1 {
+    color: #e4c580;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(228, 197, 128, 0.3);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+}
+
+/* Controls styling */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    align-items: center;
+}
+
+/* Difficulty options */
+.difficulty-options {
+    display: flex;
+    gap: 10px;
+}
+
+.difficulty-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #2f4858 0%, #1a2a3a 100%);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.difficulty-btn:hover {
+    background: linear-gradient(to bottom, #3a5a6e 0%, #243748 100%);
+    transform: translateY(-2px);
+}
+
+.difficulty-btn.active {
+    background: linear-gradient(to bottom, #e4c580 0%, #c7a45d 100%);
+    color: #1a2a3a;
+}
+
+/* Start button */
+.start-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #4a934a 0%, #2e5d2e 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.start-btn:hover {
+    background: linear-gradient(to bottom, #57ae57 0%, #366836 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Score display */
+.score-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.score, .shots {
+    display: flex;
+    align-items: center;
+}
+
+.score-value, .shots-value {
+    margin-left: 10px;
+    color: #e4c580;
+    font-size: 1.3em;
+}
+
+/* Target animation */
+@keyframes targetMove {
+    0% {
+        transform: translateX(0);
+    }
+    
+    25% {
+        transform: translateX(300px) translateY(50px);
+    }
+    
+    50% {
+        transform: translateX(600px);
+    }
+    
+    75% {
+        transform: translateX(300px) translateY(-50px);
+    }
+    
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.target {
+    animation: targetMove 5s infinite ease-in-out;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+}
+
+/* Game message */
+.game-message {
+    color: #e4c580;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 15px 0;
+    height: 30px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Arrow styles */
+.arrow {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    transition: all 0.3s ease;
+}
+
+/* Body styles */
+body {
+    background-color: #121820;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    overscroll-behavior: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .difficulty-options {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .difficulty-btn {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+    
+    .start-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .score-display {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #gameCanvas {
+        height: 250px;
+        border-radius: 8px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .difficulty-btn {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+}
